@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galeri – Stil Akademisi</title>
+  <meta name="description" content="Stil Akademisi galeri - dikiş kurslarından, atölyemizden ve öğrencilerimizden fotoğraflar." />
+  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .lightbox { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.92); z-index:2000; align-items:center; justify-content:center; }
+    .lightbox.active { display:flex; }
+    .lightbox img { max-width:90vw; max-height:90vh; border-radius:6px; object-fit:contain; }
+    .lightbox-close { position:fixed; top:20px; right:28px; color:#fff; font-size:2rem; cursor:pointer; z-index:2001; background:none;border:none; }
+    .lightbox-prev,.lightbox-next { position:fixed; top:50%; transform:translateY(-50%); background:rgba(181,20,42,0.8); border:none; color:#fff; font-size:1.4rem; padding:12px 18px; cursor:pointer; border-radius:4px; z-index:2001; }
+    .lightbox-prev { left:16px; }
+    .lightbox-next { right:16px; }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="https://scontent-ord5-2.cdninstagram.com/v/t51.2885-19/344242662_780129883637735_7460178560000954109_n.jpg?stp=dst-jpg_e0_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby42NDAuYzIifQ&_nc_ht=scontent-ord5-2.cdninstagram.com&_nc_cat=111&oh=00_Af_pH-oMjHfimhoqvNa_Iyhyhxy6AHD-85eGYnHQKz5MfA&oe=6A2A15E5&_nc_sid=8b3546" alt="Stil Akademisi" />
+      <div class="nav-logo-text">STİL AKADEMİSİ<small>Dikiş & Tasarım Atölyesi</small></div>
+    </a>
+    <div class="nav-menu">
+      <a href="index.html" data-i18n="nav.home">Ana Sayfa</a>
+      <a href="hakkimizda.html" data-i18n="nav.about">Hakkımızda</a>
+      <a href="kurslar.html" data-i18n="nav.courses">Kurslar</a>
+      <a href="galeri.html" class="active" data-i18n="nav.gallery">Galeri</a>
+      <a href="iletisim.html" data-i18n="nav.contact">İletişim</a>
+    </div>
+    <div class="nav-right">
+      <div class="nav-lang">
+        <button class="lang-btn active" data-lang="tr">TR</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <div class="nav-social">
+        <a href="https://www.instagram.com/stilakademisi" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/p/Stil-Akademisi-100090418819511/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://wa.me/message/NQIKVJBNK353O1" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      </div>
+      <div class="nav-cta"><a href="iletisim.html"><i class="fas fa-envelope"></i> <span data-i18n="nav.cta">İletişime Geçin</span></a></div>
+    </div>
+    <button class="nav-hamburger" id="navHamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<nav class="nav-mobile" id="navMobile">
+  <div class="lang-row">
+    <button class="lang-btn active" data-lang="tr">TR</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
+  <a href="index.html" data-i18n="nav.home">Ana Sayfa</a>
+  <a href="hakkimizda.html" data-i18n="nav.about">Hakkımızda</a>
+  <a href="kurslar.html" data-i18n="nav.courses">Kurslar</a>
+  <a href="galeri.html" data-i18n="nav.gallery">Galeri</a>
+  <a href="iletisim.html" data-i18n="nav.contact">İletişim</a>
+</nav>
+
+<!-- PAGE HEADER (white) -->
+<div class="page-header">
+  <div class="container">
+    <nav class="breadcrumb">
+      <a href="index.html" data-i18n="nav.home">Ana Sayfa</a>
+      <i class="fas fa-chevron-right" style="font-size:.6rem;"></i>
+      <span data-i18n="nav.gallery">Galeri</span>
+    </nav>
+    <h1 data-i18n="nav.gallery">Galeri</h1>
+    <p data-i18n="gallery.desc">Instagram hesabımızdan seçilmiş en güzel anlar.</p>
+  </div>
+</div>
+
+<!-- GALLERY FULL (white) -->
+<section class="gallery-page">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:40px;" class="fade-in">
+      <a href="https://www.instagram.com/stilakademisi" target="_blank" class="btn btn-primary" style="gap:8px;">
+        <i class="fab fa-instagram"></i> @stilakademisi'yi takip edin — 73.9K takipçi
+      </a>
+    </div>
+    <div class="gallery-full-grid" id="galleryGrid">
+      <!-- Images inserted by JS or static -->
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-inner fade-in">
+      <h2 data-i18n="cta.h2">Dikiş Maceranıza Bugün Başlayın</h2>
+      <p data-i18n="cta.p">Hiç dikiş bilmemeniz gerekmez. İlk adımı atmak yeterli.</p>
+      <div class="cta-actions">
+        <a href="https://wa.me/message/NQIKVJBNK353O1" target="_blank" class="btn btn-primary"><i class="fab fa-whatsapp"></i> <span data-i18n="cta.btn1">WhatsApp'tan Yazın</span></a>
+        <a href="kurslar.html" class="btn btn-outline"><i class="fas fa-scissors"></i> <span data-i18n="cta.btn2">Kurslara Göz At</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="https://scontent-ord5-2.cdninstagram.com/v/t51.2885-19/344242662_780129883637735_7460178560000954109_n.jpg?stp=dst-jpg_e0_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby42NDAuYzIifQ&_nc_ht=scontent-ord5-2.cdninstagram.com&_nc_cat=111&oh=00_Af_pH-oMjHfimhoqvNa_Iyhyhxy6AHD-85eGYnHQKz5MfA&oe=6A2A15E5&_nc_sid=8b3546" alt="Stil Akademisi" />
+          <div class="footer-logo-text">STİL AKADEMİSİ<small>Dikiş & Tasarım Atölyesi</small></div>
+        </div>
+        <p data-i18n="footer.desc">İstanbul Üsküdar'da dikiş dikmeyi sevdiren ve öğreten atölye.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/stilakademisi" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/p/Stil-Akademisi-100090418819511/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://wa.me/message/NQIKVJBNK353O1" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.pages">Sayfalar</h4>
+        <ul>
+          <li><a href="index.html" data-i18n="nav.home">Ana Sayfa</a></li>
+          <li><a href="hakkimizda.html" data-i18n="nav.about">Hakkımızda</a></li>
+          <li><a href="kurslar.html" data-i18n="nav.courses">Kurslar</a></li>
+          <li><a href="galeri.html" data-i18n="nav.gallery">Galeri</a></li>
+          <li><a href="iletisim.html" data-i18n="nav.contact">İletişim</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.courses">Kurslar</h4>
+        <ul>
+          <li><a href="kurslar.html" data-i18n="course1.title">Yetişkin Dikiş Kursu</a></li>
+          <li><a href="kurslar.html" data-i18n="course2.title">Çocuk Atölyesi</a></li>
+          <li><a href="kurslar.html" data-i18n="course5.title">Tasarım Kursu</a></li>
+          <li><a href="kurslar.html" data-i18n="course3.title">Dikiş Makinesi Satışı</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.contact">İletişim</h4>
+        <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span data-i18n="footer.address">Barbaros Mah., Veysipaşa Sok., Yüce Kent Sitesi No: 3A/B, Üsküdar/İstanbul</span></div>
+        <div class="footer-contact-item"><i class="fas fa-phone"></i><span><a href="tel:+905060399520" data-i18n="footer.phone">+90 506 039 95 20</a></span></div>
+        <div class="footer-contact-item"><i class="fas fa-clock"></i><span data-i18n="footer.hours">Hft. 7 gün: 09:00 – 18:30</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="footer.rights">© 2026 Stil Akademisi. Tüm hakları saklıdır.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lbClose">&#x2715;</button>
+  <button class="lightbox-prev" id="lbPrev">&#8592;</button>
+  <img src="" id="lbImg" alt="Galeri" />
+  <button class="lightbox-next" id="lbNext">&#8594;</button>
+</div>
+
+<a href="https://wa.me/message/NQIKVJBNK353O1" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+<script src="assets/script.js"></script>
+<script>
+const galleryImages = [
+  { src: "https://scontent-iad3-1.cdninstagram.com/v/t51.71878-15/711046195_3999724403656352_2527773144684227418_n.jpg?stp=dst-jpg_e15_tt6&_nc_ht=scontent-iad3-1.cdninstagram.com&_nc_cat=108&oh=00_Af86Nt2oDa-Mfk9EtjH-bqcbUUvXtUPUd3LCrmm5j0A-4g&oe=6A29F92D&_nc_sid=10d13b", alt: "Stil Akademisi" },
+  { src: "https://scontent-lga3-1.cdninstagram.com/v/t51.82787-15/639968837_18339495661212273_7218903276260981815_n.jpg?stp=dst-jpg_e35_p1080x1080_sh2.08_tt6&_nc_ht=scontent-lga3-1.cdninstagram.com&_nc_cat=109&oh=00_Af8u14tv2suiM_5bkYhXBsgXKR3XBhYOqbal4R6khmQ50A&oe=6A2A08F5&_nc_sid=10d13b", alt: "Çocuk Dikiş" },
+  { src: "https://scontent-lga3-2.cdninstagram.com/v/t51.71878-15/656524253_874874242266173_4481781621394643575_n.jpg?stp=dst-jpg_e15_tt6&_nc_ht=scontent-lga3-2.cdninstagram.com&_nc_cat=105&oh=00_Af_D3C0VZmMQeid8MEhUwjwyocqhQarxx8R3Dri-hr-D4w&oe=6A2A0ACD&_nc_sid=10d13b", alt: "Workshop" },
+  { src: "https://scontent-iad6-1.cdninstagram.com/v/t51.82787-15/640254752_18339594181212273_5171069031129665704_n.jpg?stp=dst-jpg_e15_fr_p1080x1080_tt6&_nc_ht=scontent-iad6-1.cdninstagram.com&_nc_cat=109&oh=00_Af_J10U8Doal2T9Vi7_DyYJHaAbgbh0UQksO9thmXnFxIg&oe=6A2A12B0&_nc_sid=10d13b", alt: "Kurs" },
+  { src: "https://scontent-atl3-3.cdninstagram.com/v/t51.82787-15/649525362_18340340290212273_8128100647222681032_n.jpg?stp=dst-jpg_e35_p1080x1080_sh2.08_tt6&_nc_ht=scontent-atl3-3.cdninstagram.com&_nc_cat=109&oh=00_Af-O0aDgbL3US-K91qnizsBhQKjDWM5L07XhBneLwKNvVQ&oe=6A2A0653&_nc_sid=10d13b", alt: "Bernette" },
+  { src: "https://scontent-atl3-3.cdninstagram.com/v/t51.82787-15/656370961_18344290633212273_8927734833266359192_n.jpg?stp=dst-jpg_e35_p1080x1080_sh2.08_tt6&_nc_ht=scontent-atl3-3.cdninstagram.com&_nc_cat=109&oh=00_Af9A-JvdQakYx_-fq-4ZFaXY7tbSPDj-RI2xwhCcym_16w&oe=6A2A029B&_nc_sid=10d13b", alt: "Atölye" },
+  { src: "https://scontent-msp1-1.cdninstagram.com/v/t51.71878-15/645090527_1633262327856180_5648618687104842014_n.jpg?stp=dst-jpg_e15_tt6&_nc_ht=scontent-msp1-1.cdninstagram.com&_nc_cat=100&oh=00_Af-KTYT-x6-touw4GVDGhm3gfnsvcGFdM3x-0kpIlagECw&oe=6A29FEF8&_nc_sid=10d13b", alt: "Atölye" },
+  { src: "https://scontent-atl3-1.cdninstagram.com/v/t51.71878-15/634041618_1384999829621334_7253031379522491868_n.jpg?stp=dst-jpg_e15_tt6&_nc_ht=scontent-atl3-1.cdninstagram.com&_nc_cat=106&oh=00_Af_mOX-BWgmyNMVINWIr8jw47cxL2trgCTkuCsk8UsX-Ug&oe=6A29FAF8&_nc_sid=10d13b", alt: "Model" },
+  { src: "https://scontent-iad6-1.cdninstagram.com/v/t51.82787-15/672478812_18349453171212273_4063759660141404485_n.jpg?stp=dst-jpg_e15_fr_p1080x1080_tt6&_nc_ht=scontent-iad6-1.cdninstagram.com&_nc_cat=109&oh=00_Af9MdLi0nxkV294Qs3B4taktn6s6NmxXkJvDEjszUjvmFQ&oe=6A29FF75&_nc_sid=10d13b", alt: "Workshop" },
+  { src: "https://scontent-mia3-3.cdninstagram.com/v/t51.82787-15/624471069_18335234548212273_7058242421591580238_n.jpg?stp=dst-jpg_e35_p1080x1080_sh2.08_tt6&_nc_ht=scontent-mia3-3.cdninstagram.com&_nc_cat=109&oh=00_Af-TfSZB6t5abfAXRZoAcXO-FakBwTo0AhoD_Eh1U2YVoA&oe=6A29E7BD&_nc_sid=10d13b", alt: "Makine" },
+  { src: "https://scontent-atl3-1.cdninstagram.com/v/t51.71878-15/686403741_2007798926489586_7405123062037711270_n.jpg?stp=dst-jpg_e15_tt6&_nc_ht=scontent-atl3-1.cdninstagram.com&_nc_cat=106&oh=00_Af8TPwgDHztEzoFZDjbZ1WbXFkoaT72sGSo96kr74kq2jA&oe=6A29E6B4&_nc_sid=10d13b", alt: "Dikiş Kursu" },
+  { src: "https://scontent-lga3-1.cdninstagram.com/v/t51.82787-15/670885284_18345816100212273_2321091098284899595_n.jpg?stp=dst-jpg_e15_fr_p1080x1080_tt6&_nc_ht=scontent-lga3-1.cdninstagram.com&_nc_cat=109&oh=00_Af_AFDMdsP3nUlMpfS0UlLvPShBWlhbqJGDDpMDOduM3xg&oe=6A29F615&_nc_sid=10d13b", alt: "Atölye" },
+  { src: "https://instagram.fjan1-1.fna.fbcdn.net/v/t51.71878-15/652019284_1483411099973766_598087493976441623_n.jpg?stp=dst-jpg_e15_tt6&_nc_ht=instagram.fjan1-1.fna.fbcdn.net&_nc_cat=106&oh=00_Af_uNAlCj0JQE6pap1zb3lMJaYtK1PZTTP5_kkuTXHRKWQ&oe=6A2A1285&_nc_sid=10d13b", alt: "Kurs" },
+  { src: "https://scontent-det1-1.cdninstagram.com/v/t51.82787-15/623653993_18335235271212273_6421504993401998863_n.jpg?stp=dst-jpg_e15_fr_p1080x1080_tt6&_nc_ht=scontent-det1-1.cdninstagram.com&_nc_cat=109&oh=00_Af8Pj0ImRIPf1HrgYS9EPye8pdf3iued22Z_Qxd-9YW1uw&oe=6A2A0056&_nc_sid=10d13b", alt: "Workshop" }
+];
+
+const grid = document.getElementById('galleryGrid');
+let currentIdx = 0;
+
+galleryImages.forEach((img, i) => {
+  const item = document.createElement('div');
+  item.className = 'gallery-item fade-in';
+  item.style.transitionDelay = (i * 0.04) + 's';
+  item.innerHTML = `
+    <img src="${img.src}" alt="${img.alt}" loading="lazy" />
+    <div class="gallery-item-overlay"></div>
+    <a class="gallery-item-link" data-idx="${i}"><i class="fas fa-expand"></i></a>
+  `;
+  item.querySelector('.gallery-item-link').addEventListener('click', (e) => {
+    e.preventDefault();
+    openLightbox(i);
+  });
+  item.addEventListener('click', () => openLightbox(i));
+  grid.appendChild(item);
+});
+
+const lb = document.getElementById('lightbox');
+const lbImg = document.getElementById('lbImg');
+
+function openLightbox(i) {
+  currentIdx = i;
+  lbImg.src = galleryImages[i].src;
+  lb.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  lb.classList.remove('active');
+  document.body.style.overflow = '';
+}
+document.getElementById('lbClose').addEventListener('click', closeLightbox);
+document.getElementById('lbPrev').addEventListener('click', () => {
+  currentIdx = (currentIdx - 1 + galleryImages.length) % galleryImages.length;
+  lbImg.src = galleryImages[currentIdx].src;
+});
+document.getElementById('lbNext').addEventListener('click', () => {
+  currentIdx = (currentIdx + 1) % galleryImages.length;
+  lbImg.src = galleryImages[currentIdx].src;
+});
+lb.addEventListener('click', (e) => { if(e.target === lb) closeLightbox(); });
+document.addEventListener('keydown', (e) => {
+  if (!lb.classList.contains('active')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') document.getElementById('lbPrev').click();
+  if (e.key === 'ArrowRight') document.getElementById('lbNext').click();
+});
+</script>
+</body>
+</html>
