@@ -384,6 +384,8 @@ footer { background: var(--black); border-top: 1px solid rgba(255,255,255,0.06);
 .course-detail.dark { background: var(--black); }
 .course-block { display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; margin-bottom:80px; }
 .course-block:last-child { margin-bottom:0; }
+.course-block.reverse .course-img { order:2; }
+.course-block.reverse .course-content { order:1; }
 .course-img { border-radius:8px; overflow:hidden; aspect-ratio:4/3; }
 .course-img img { width:100%; height:100%; object-fit:cover; }
 .course-content-tag { font-size:.68rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--red); border-left:2px solid var(--red); padding-left:12px; margin-bottom:16px; display:inline-block; }
