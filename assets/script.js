@@ -28,7 +28,7 @@ const translations = {
     'stat.posts': 'İçerik',
     // About
     'about.tag': 'Hakkımızda',
-    'about.h2a': '"Dikiş dikmeyi',
+    'about.h2a': '"Dikiş dikmeyi ',
     'about.h2b': 'sevdiren ve öğreten atölye"',
     'about.desc1': 'Stil Akademisi olarak, dikiş öğrenmenin zor ve sıkıcı olmak zorunda olmadığına inanıyoruz. Kurucu @tubagun liderliğinde, her seviyeden öğrencimize samimi, eğlenceli ve uygulamalı bir öğrenme deneyimi sunuyoruz.',
     'about.desc2': 'Üsküdar/Koşuyolu\'ndaki atölyemizde BERNINA ve bernette yetkili satış bayisi olarak en kaliteli dikiş makinelerini de bünyemizde bulunduruyoruz.',

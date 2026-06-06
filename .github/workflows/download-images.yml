@@ -34,6 +34,7 @@ jobs:
           curl -sL --retry 3 -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" -H "Referer: https://www.instagram.com/" -o img/galeri/gm_13.jpg "https://scontent-iad6-1.cdninstagram.com/v/t51.82787-15/656370961_18344290633212273_8927734833266359192_n.jpg?stp=dst-jpg_e35_p1080x1080_sh2.08_tt6&_nc_ht=scontent-iad6-1.cdninstagram.com&_nc_cat=109&_nc_oc=Q6cZ2gE3qLgJFBJUoWFU5UBrJshjbHpTPbVgkawYM0KZdVKm_x0cUiNzK5oDVylYEv2q2Cw&_nc_ohc=Oj-ZF2mdOsgQ7kNvwGMyaMO&_nc_gid=LDgn7CmXRu6XFFrwb6-lKA&edm=APs17CUBAAAA&ccb=7-5&oh=00_Af_RJO0xFQUhzWGdE5to5Eo7dk6z8q2_cjwzubSbLYdHQw&oe=6A2A3ADB&_nc_sid=10d13b" && echo "gm_13: $(wc -c < img/galeri/gm_13.jpg) bytes"
           curl -sL --retry 3 -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" -H "Referer: https://www.instagram.com/" -o img/galeri/gm_14.jpg "https://scontent-iad6-1.cdninstagram.com/v/t51.82787-15/623653993_18335235271212273_6421504993401998863_n.jpg?stp=dst-jpg_e15_fr_p1080x1080_tt6&_nc_ht=scontent-iad6-1.cdninstagram.com&_nc_cat=109&_nc_oc=Q6cZ2gErr682HfJ5zRcVehRj-XHggY52bQwzLfbkPMyqv6VkXX_4c54cdrCQ8YsKwrMZyfw&_nc_ohc=tbD4WqH4_hMQ7kNvwEZ3c8J&_nc_gid=IJbZFZVbo-_OxjmEhICTTA&edm=APs17CUBAAAA&ccb=7-5&oh=00_Af_qIGPxk-WAwvpnrPMqpRG11Wo1A1533M5C0UYBR5U1rQ&oe=6A2A3896&_nc_sid=10d13b" && echo "gm_14: $(wc -c < img/galeri/gm_14.jpg) bytes"
           curl -sL --retry 3 -H "User-Agent: Mozilla/5.0" -o assets/logo.jpg "https://scontent-sjc6-1.cdninstagram.com/v/t51.2885-19/344242662_780129883637735_7460178560000954109_n.jpg?stp=dst-jpg_e0_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby42NDAuYzIifQ&_nc_ht=scontent-sjc6-1.cdninstagram.com&_nc_cat=111&_nc_oc=Q6cZ2gEQz3GxvzOoHlIGwVzSZpb9eM2mbq25K0x_IOordjB3RE5pTrGULtfdMOwaC3DwxcU&_nc_ohc=4gQ-vkL0q6sQ7kNvwHzMG-i&_nc_gid=lQVfUafg-aPVd_-gzeaJBw&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af9ebx_ERHWW0sn2yiQqmNpbwswM94n_9Ts7tRgZrFqUPg&oe=6A2A15E5&_nc_sid=8b3546" && echo "logo: $(wc -c < assets/logo.jpg) bytes"
+          curl -sL --retry 3 -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" -H "Referer: https://www.instagram.com/" -o assets/founder.jpg "https://scontent-lax3-2.cdninstagram.com/v/t51.82787-19/710307294_18597148558013883_1326701383004669127_n.jpg?stp=dst-jpg_e0_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-lax3-2.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2gEDechbOqmOIA1ldSlXzqyh532lx-Qqc_MAfzBauViWbRfP6pkNL4O1CMSMuJKtqNo&_nc_ohc=41Zo6DdpQ04Q7kNvwGCOJQR&_nc_gid=mBywFmWKKEWHgACtcSgJFA&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af_RmyFs0QNSYsthdHHFqeQwmaqEhusmpK-U2sduO9RjuA&oe=6A2A5D13&_nc_sid=8b3546" && echo "founder: $(wc -c < assets/founder.jpg) bytes"
           echo "Downloads complete"
 
       - name: Verify downloads
@@ -47,7 +48,7 @@ jobs:
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
-          git add img/galeri/ assets/logo.jpg
+          git add img/galeri/ assets/logo.jpg assets/founder.jpg
           git status
           if git diff --staged --quiet; then
             echo "Nothing new to commit"
