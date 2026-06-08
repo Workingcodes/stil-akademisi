@@ -9,9 +9,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" />
   <link rel="stylesheet" href="assets/style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/fontawesome.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/solid.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/brands.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/fontawesome.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" />
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/solid.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" />
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/brands.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" />
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/fontawesome.min.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/solid.min.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/brands.min.css" crossorigin="anonymous" />
+  </noscript>
 </head>
 <body>
 
@@ -35,10 +40,10 @@
         <button class="lang-btn" data-lang="en">EN</button>
       </div>
       <div class="nav-social">
-        <a href="https://www.instagram.com/stilakademisi" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.facebook.com/p/Stil-Akademisi-100090418819511/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://wa.me/message/NQIKVJBNK353O1" target="_blank"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://www.youtube.com/@stilakademisi" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/stilakademisi" target="_blank" aria-label="Instagram'da takip et"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+        <a href="https://www.facebook.com/p/Stil-Akademisi-100090418819511/" target="_blank" aria-label="Facebook'ta takip et"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+        <a href="https://wa.me/message/NQIKVJBNK353O1" target="_blank" aria-label="WhatsApp ile iletişim"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+        <a href="https://www.youtube.com/@stilakademisi" target="_blank" aria-label="YouTube kanalımız"><i class="fab fa-youtube" aria-hidden="true"></i></a>
       </div>
       <div class="nav-cta"><a href="iletisim.html"><i class="fas fa-envelope"></i> <span data-i18n="nav.cta">İletişime Geçin</span></a></div>
     </div>
@@ -191,13 +196,13 @@
         </div>
         <p data-i18n="footer.desc">İstanbul Üsküdar'da dikiş dikmeyi sevdiren ve öğreten atölye.</p>
         <div class="footer-social">
-          <a href="https://www.instagram.com/stilakademisi" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.facebook.com/p/Stil-Akademisi-100090418819511/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://wa.me/message/NQIKVJBNK353O1" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://www.instagram.com/stilakademisi" target="_blank" aria-label="Instagram'da takip et"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="https://www.facebook.com/p/Stil-Akademisi-100090418819511/" target="_blank" aria-label="Facebook'ta takip et"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="https://wa.me/message/NQIKVJBNK353O1" target="_blank" aria-label="WhatsApp ile iletişim"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
         </div>
       </div>
       <div class="footer-col">
-        <h4 data-i18n="footer.pages">Sayfalar</h4>
+        <h3 data-i18n="footer.pages">Sayfalar</h3>
         <ul>
           <li><a href="index.html" data-i18n="nav.home">Ana Sayfa</a></li>
           <li><a href="hakkimizda.html" data-i18n="nav.about">Hakkımızda</a></li>
@@ -207,7 +212,7 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h4 data-i18n="footer.courses">Kurslar</h4>
+        <h3 data-i18n="footer.courses">Kurslar</h3>
         <ul>
           <li><a href="kurslar.html" data-i18n="course1.title">Yetişkin Dikiş Kursu</a></li>
           <li><a href="kurslar.html" data-i18n="course2.title">Çocuk Atölyesi</a></li>
@@ -216,7 +221,7 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h4 data-i18n="footer.contact">İletişim</h4>
+        <h3 data-i18n="footer.contact">İletişim</h3>
         <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span data-i18n="footer.address">Barbaros Mah., Veysipaşa Sok., Yüce Kent Sitesi No: 3A/B, Üsküdar/İstanbul</span></div>
         <div class="footer-contact-item"><i class="fas fa-phone"></i><span><a href="tel:+905060399520" data-i18n="footer.phone">+90 506 039 95 20</a></span></div>
         <div class="footer-contact-item"><i class="fas fa-clock"></i><span data-i18n="footer.hours">Hft. 7 gün: 09:00 – 18:30</span></div>
@@ -228,7 +233,7 @@
   </div>
 </footer>
 
-<a href="https://wa.me/message/NQIKVJBNK353O1" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+<a href="https://wa.me/message/NQIKVJBNK353O1" target="_blank" class="whatsapp-float" aria-label="WhatsApp ile iletişim"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
 <script src="assets/script.js"></script>
 </body>
 </html>

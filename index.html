@@ -31,9 +31,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" />
   <link rel="stylesheet" href="assets/style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/fontawesome.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/solid.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/brands.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/fontawesome.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" />
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/solid.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" />
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/brands.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" />
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/fontawesome.min.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/solid.min.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/brands.min.css" crossorigin="anonymous" />
+  </noscript>
 </head>
 <body>
 
@@ -57,10 +62,10 @@
         <button class="lang-btn" data-lang="en">EN</button>
       </div>
       <div class="nav-social">
-        <a href="https://www.instagram.com/stilakademisi" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.facebook.com/p/Stil-Akademisi-100090418819511/" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://wa.me/message/NQIKVJBNK353O1" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://www.youtube.com/@stilakademisi" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/stilakademisi" target="_blank" rel="noopener" aria-label="Instagram'da takip et"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+        <a href="https://www.facebook.com/p/Stil-Akademisi-100090418819511/" target="_blank" rel="noopener" aria-label="Facebook'ta takip et"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+        <a href="https://wa.me/message/NQIKVJBNK353O1" target="_blank" rel="noopener" aria-label="WhatsApp ile iletişim"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+        <a href="https://www.youtube.com/@stilakademisi" target="_blank" rel="noopener" aria-label="YouTube kanalımız"><i class="fab fa-youtube" aria-hidden="true"></i></a>
       </div>
       <div class="nav-cta"><a href="iletisim.html"><i class="fas fa-envelope"></i> <span data-i18n="nav.cta">İletişime Geçin</span></a></div>
     </div>
@@ -85,13 +90,14 @@
   <div class="hero-video-bg">
     <video autoplay muted loop playsinline preload="none" poster="assets/hero-photo.webp">
       <source src="assets/sewing-video.mp4" type="video/mp4">
+      <track kind="captions" srclang="tr" label="Türkçe" default />
     </video>
   </div>
   <div class="hero-video-overlay"></div>
   <div class="container">
     <div class="hero-layout">
       <div class="hero-photo-col slide-left">
-        <img src="assets/hero-photo.webp" alt="Stil Akademisi" class="hero-founder-img" />
+        <img src="assets/hero-photo.webp" alt="Stil Akademisi" class="hero-founder-img" fetchpriority="high" width="440" height="587" />
       </div>
       <div class="hero-inner fade-in">
         <div class="hero-badge"><span class="dot"></span> <span data-i18n="hero.badge">Üsküdar / İstanbul</span></div>
@@ -285,44 +291,44 @@
     </div>
     <div class="gallery-grid">
       <div class="gallery-item fade-in">
-        <img src="img/galeri/gm_4.webp" alt="Stil Akademisi" loading="lazy" />
+        <img src="img/galeri/gm_4.webp" srcset="img/galeri/gm_4.webp 800w" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 25vw" alt="Stil Akademisi" loading="lazy" decoding="async" width="800" />
         <div class="gallery-item-overlay"></div>
-        <a href="https://www.instagram.com/stilakademisi" target="_blank" class="gallery-item-link"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.instagram.com/stilakademisi" target="_blank" class="gallery-item-link" aria-label="Instagram'da takip et"><i class="fab fa-instagram" aria-hidden="true"></i></a>
       </div>
       <div class="gallery-item fade-in" style="transition-delay:.05s">
-        <img src="img/galeri/gm_5.webp" alt="Çocuk Dikiş" loading="lazy" />
+        <img src="img/galeri/gm_5.webp" srcset="img/galeri/gm_5.webp 800w" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 25vw" alt="Çocuk Dikiş" loading="lazy" decoding="async" width="800" />
         <div class="gallery-item-overlay"></div>
-        <a href="https://www.instagram.com/stilakademisi" target="_blank" class="gallery-item-link"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.instagram.com/stilakademisi" target="_blank" class="gallery-item-link" aria-label="Instagram'da takip et"><i class="fab fa-instagram" aria-hidden="true"></i></a>
       </div>
       <div class="gallery-item fade-in" style="transition-delay:.1s">
-        <img src="img/galeri/gm_6.webp" alt="Bernette Makine" loading="lazy" />
+        <img src="img/galeri/gm_6.webp" srcset="img/galeri/gm_6.webp 800w" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 25vw" alt="Bernette Makine" loading="lazy" decoding="async" width="800" />
         <div class="gallery-item-overlay"></div>
-        <a href="https://www.instagram.com/stilakademisi" target="_blank" class="gallery-item-link"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.instagram.com/stilakademisi" target="_blank" class="gallery-item-link" aria-label="Instagram'da takip et"><i class="fab fa-instagram" aria-hidden="true"></i></a>
       </div>
       <div class="gallery-item fade-in" style="transition-delay:.15s">
-        <img src="img/galeri/gm_7.webp" alt="Dikiş Kursu" loading="lazy" />
+        <img src="img/galeri/gm_7.webp" srcset="img/galeri/gm_7.webp 800w" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 25vw" alt="Dikiş Kursu" loading="lazy" decoding="async" width="800" />
         <div class="gallery-item-overlay"></div>
-        <a href="https://www.instagram.com/stilakademisi" target="_blank" class="gallery-item-link"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.instagram.com/stilakademisi" target="_blank" class="gallery-item-link" aria-label="Instagram'da takip et"><i class="fab fa-instagram" aria-hidden="true"></i></a>
       </div>
       <div class="gallery-item fade-in" style="transition-delay:.2s">
-        <img src="img/galeri/gm_8.webp" alt="Atölye" loading="lazy" />
+        <img src="img/galeri/gm_8.webp" srcset="img/galeri/gm_8.webp 800w" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 25vw" alt="Atölye" loading="lazy" decoding="async" width="800" />
         <div class="gallery-item-overlay"></div>
-        <a href="https://www.instagram.com/stilakademisi" target="_blank" class="gallery-item-link"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.instagram.com/stilakademisi" target="_blank" class="gallery-item-link" aria-label="Instagram'da takip et"><i class="fab fa-instagram" aria-hidden="true"></i></a>
       </div>
       <div class="gallery-item fade-in" style="transition-delay:.25s">
-        <img src="img/galeri/gm_9.webp" alt="Dikiş Modeli" loading="lazy" />
+        <img src="img/galeri/gm_9.webp" srcset="img/galeri/gm_9.webp 800w" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 25vw" alt="Dikiş Modeli" loading="lazy" decoding="async" width="800" />
         <div class="gallery-item-overlay"></div>
-        <a href="https://www.instagram.com/stilakademisi" target="_blank" class="gallery-item-link"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.instagram.com/stilakademisi" target="_blank" class="gallery-item-link" aria-label="Instagram'da takip et"><i class="fab fa-instagram" aria-hidden="true"></i></a>
       </div>
       <div class="gallery-item fade-in" style="transition-delay:.3s">
-        <img src="img/galeri/gm_10.webp" alt="Workshop" loading="lazy" />
+        <img src="img/galeri/gm_10.webp" srcset="img/galeri/gm_10.webp 800w" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 25vw" alt="Workshop" loading="lazy" decoding="async" width="800" />
         <div class="gallery-item-overlay"></div>
-        <a href="https://www.instagram.com/stilakademisi" target="_blank" class="gallery-item-link"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.instagram.com/stilakademisi" target="_blank" class="gallery-item-link" aria-label="Instagram'da takip et"><i class="fab fa-instagram" aria-hidden="true"></i></a>
       </div>
       <div class="gallery-item fade-in" style="transition-delay:.35s">
-        <img src="img/galeri/gm_11.webp" alt="Kurs" loading="lazy" />
+        <img src="img/galeri/gm_11.webp" srcset="img/galeri/gm_11.webp 800w" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 25vw" alt="Kurs" loading="lazy" decoding="async" width="800" />
         <div class="gallery-item-overlay"></div>
-        <a href="https://www.instagram.com/stilakademisi" target="_blank" class="gallery-item-link"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.instagram.com/stilakademisi" target="_blank" class="gallery-item-link" aria-label="Instagram'da takip et"><i class="fab fa-instagram" aria-hidden="true"></i></a>
       </div>
     </div>
     <div class="gallery-cta fade-in">
@@ -398,13 +404,13 @@
         </div>
         <p data-i18n="footer.desc">İstanbul Üsküdar'da dikiş dikmeyi sevdiren ve öğreten atölye. BERNINA & bernette yetkili satış bayisi.</p>
         <div class="footer-social">
-          <a href="https://www.instagram.com/stilakademisi" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.facebook.com/p/Stil-Akademisi-100090418819511/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://wa.me/message/NQIKVJBNK353O1" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://www.instagram.com/stilakademisi" target="_blank" aria-label="Instagram'da takip et"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="https://www.facebook.com/p/Stil-Akademisi-100090418819511/" target="_blank" aria-label="Facebook'ta takip et"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="https://wa.me/message/NQIKVJBNK353O1" target="_blank" aria-label="WhatsApp ile iletişim"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
         </div>
       </div>
       <div class="footer-col">
-        <h4 data-i18n="footer.pages">Sayfalar</h4>
+        <h3 data-i18n="footer.pages">Sayfalar</h3>
         <ul>
           <li><a href="index.html" data-i18n="nav.home">Ana Sayfa</a></li>
           <li><a href="hakkimizda.html" data-i18n="nav.about">Hakkımızda</a></li>
@@ -414,7 +420,7 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h4 data-i18n="footer.courses">Kurslar</h4>
+        <h3 data-i18n="footer.courses">Kurslar</h3>
         <ul>
           <li><a href="kurslar.html" data-i18n="course1.title">Yetişkin Dikiş Kursu</a></li>
           <li><a href="kurslar.html" data-i18n="course2.title">Çocuk Atölyesi</a></li>
@@ -423,7 +429,7 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h4 data-i18n="footer.contact">İletişim</h4>
+        <h3 data-i18n="footer.contact">İletişim</h3>
         <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span data-i18n="footer.address">Barbaros Mah., Veysipaşa Sok., Yüce Kent Sitesi No: 3A/B, Üsküdar/İstanbul</span></div>
         <div class="footer-contact-item"><i class="fas fa-phone"></i><span><a href="tel:+905060399520" data-i18n="footer.phone">+90 506 039 95 20</a></span></div>
         <div class="footer-contact-item"><i class="fas fa-clock"></i><span data-i18n="footer.hours">Hft. 7 gün: 09:00 – 18:30</span></div>
